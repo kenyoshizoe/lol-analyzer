@@ -92,11 +92,11 @@ def main(config):
                 print(
                     f'{enemy_champ.name} -> {max_winrate_champion.name} ({max_winrate}%)')
 
+
 if __name__ == '__main__':
-    config = {}
-    config['position'] = 'mid'
-    config['tier'] = 'bronze'
-    config['champion_pool'] = ['Vex', 'Ahri', 'Naafiri', 'Veigar']
+    import yaml
+    with open('config.yaml', 'r') as f:
+        config = yaml.load(f, Loader=yaml.FullLoader)
 
     import argparse
     parser = argparse.ArgumentParser()
